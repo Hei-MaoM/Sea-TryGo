@@ -75,6 +75,7 @@ type UpdateSelfReq{
 }
 
 type UpdateSelfResp{
+    Success bool `json:"success"`
     Admin AdminInfo `json:"admin"`
 }
 
