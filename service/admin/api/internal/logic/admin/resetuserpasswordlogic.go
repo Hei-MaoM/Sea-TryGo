@@ -42,7 +42,7 @@ func (l *ResetuserpasswordLogic) Resetuserpassword(req *types.ResetUserPasswordR
 		return nil, err
 	}
 	user.Password = password
-	l.svcCtx.DB.Save(user)
+	err = l.svcCtx.DB.Model(&user).Update("password", password).Error
 	return &types.ResetUserPasswordResp{
 		Success: true,
 	}, nil
