@@ -68,5 +68,11 @@ service admincenter {
 	)
 	@handler resetuserpassword
 	post /admin/resetuserpassword (ResetUserPasswordReq) returns (ResetUserPasswordResp)
+
+	@doc (
+		updateuser: "修改用户信息"
+	)
+	@handler updateuser
+	post /admin/updateuser (UpdateUserReq) returns (UpdateUserResp)
 }
 
